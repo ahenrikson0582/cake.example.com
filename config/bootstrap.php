@@ -227,7 +227,6 @@ TypeFactory::map('time', StringType::class);
 // Enable For Facebook Login - Need API credentials from https://developers.facebook.com/ 
 // The following configuration setting must be set before loading the Users plugin
 Configure::write('Users.Social.login', true); //to enable social login
-Configure::write('Users.config', ['users']);
 Configure::write('OAuth.providers.facebook.options.graphApiVersion', 'v2.8');
 Configure::write('OAuth.providers.facebook.options.clientId', 'YOUR APP ID');
 Configure::write('OAuth.providers.facebook.options.clientSecret', 'YOUR APP SECRET');
