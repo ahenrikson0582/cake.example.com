@@ -181,6 +181,10 @@ ServerRequest::addDetector('tablet', function ($request) {
     return $detector->isTablet();
 });
 
+// The following configuration setting must be set before loading the Users plugin
+// The following configuration setting must be set before loading the Users plugin
+
+
 /*
  * You can set whether the ORM uses immutable or mutable Time types.
  * The default changed in 4.0 to immutable types. You can uncomment
@@ -219,3 +223,14 @@ TypeFactory::map('time', StringType::class);
 //Inflector::rules('plural', ['/^(inflect)or$/i' => '\1ables']);
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
+
+// Enable For Facebook Login - Need API credentials from https://developers.facebook.com/ 
+// The following configuration setting must be set before loading the Users plugin
+Configure::write('Users.Social.login', true); //to enable social login
+Configure::write('Users.config', ['users']);
+Configure::write('OAuth.providers.facebook.options.graphApiVersion', 'v2.8');
+Configure::write('OAuth.providers.facebook.options.clientId', 'YOUR APP ID');
+Configure::write('OAuth.providers.facebook.options.clientSecret', 'YOUR APP SECRET');
+
+// Configure::write('OAuth.providers.twitter.options.clientId', 'YOUR APP ID');
+// Configure::write('OAuth.providers.twitter.options.clientSecret', 'YOUR APP SECRET');
